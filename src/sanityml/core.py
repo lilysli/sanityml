@@ -28,7 +28,7 @@ def discover_targets(
         req_file = target / "requirements.txt"
         results["requirements"] = req_file if req_file.exists() else None
     if scan_models:
-        model_exts = ["*.pt", "*.pth", "*.pkl", "*.joblib", "*.h5", "*.safetensors"]
+        model_exts = ["*.pt", "*.pth", "*.pkl", "*.joblib", "*.h5"]
         models = {p for ext in model_exts for p in target.rglob(ext)}
         results["models"] = sorted(models)
 
