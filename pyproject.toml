@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sanityml"
+version = "0.1.0"
+description = "A quick sanity check for ML projects"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.0,<9.0",
+    "bandit==1.7.8",
+    "modelscan==0.8.1",
+    "pip-audit>=2.7.0",
+]
+[project.optional-dependencies]
+dev = [
+    "hatchling>=1.20.0",
+    "build>=1.0.3",
+    "twine>=4.0.2",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.scripts]
+sanityml = "sanityml.cli:main"
